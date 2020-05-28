@@ -1,0 +1,296 @@
+[
+  {
+    "ID": "7005",
+    "Nom": "ABBEVILLE",
+    "Latitude": 50.136,
+    "Longitude": 1.834,
+    "Altitude": 69
+  },
+  {
+    "ID": "7015",
+    "Nom": "LILLE-LESQUIN",
+    "Latitude": 50.57,
+    "Longitude": 3.0975,
+    "Altitude": 47
+  },
+  {
+    "ID": "7020",
+    "Nom": "PTE DE LA HAGUE",
+    "Latitude": 49.725167,
+    "Longitude": -1.939833,
+    "Altitude": 6
+  },
+  {
+    "ID": "7027",
+    "Nom": "CAEN-CARPIQUET",
+    "Latitude": 49.18,
+    "Longitude": -0.456167,
+    "Altitude": 67
+  },
+  {
+    "ID": "7037",
+    "Nom": "ROUEN-BOOS",
+    "Latitude": 49.383,
+    "Longitude": 1.181667,
+    "Altitude": 151
+  },
+  {
+    "ID": "7072",
+    "Nom": "REIMS-PRUNAY",
+    "Latitude": 49.209667,
+    "Longitude": 4.155333,
+    "Altitude": 95
+  },
+  {
+    "ID": "7110",
+    "Nom": "BREST-GUIPAVAS",
+    "Latitude": 48.444167,
+    "Longitude": -4.412,
+    "Altitude": 94
+  },
+  {
+    "ID": "7117",
+    "Nom": "PLOUMANAC'H",
+    "Latitude": 48.825833,
+    "Longitude": -3.473167,
+    "Altitude": 55
+  },
+  {
+    "ID": "7130",
+    "Nom": "RENNES-ST JACQUES",
+    "Latitude": 48.068833,
+    "Longitude": -1.734,
+    "Altitude": 36
+  },
+  {
+    "ID": "7139",
+    "Nom": "ALENCON",
+    "Latitude": 48.4455,
+    "Longitude": 0.110167,
+    "Altitude": 143
+  },
+  {
+    "ID": "7149",
+    "Nom": "ORLY",
+    "Latitude": 48.716833,
+    "Longitude": 2.384333,
+    "Altitude": 89
+  },
+  {
+    "ID": "7168",
+    "Nom": "TROYES-BARBEREY",
+    "Latitude": 48.324667,
+    "Longitude": 4.02,
+    "Altitude": 112
+  },
+  {
+    "ID": "7181",
+    "Nom": "NANCY-OCHEY",
+    "Latitude": 48.581,
+    "Longitude": 5.959833,
+    "Altitude": 336
+  },
+  {
+    "ID": "7190",
+    "Nom": "STRASBOURG-ENTZHEIM",
+    "Latitude": 48.5495,
+    "Longitude": 7.640333,
+    "Altitude": 150
+  },
+  {
+    "ID": "7207",
+    "Nom": "BELLE ILE-LE TALUT",
+    "Latitude": 47.294333,
+    "Longitude": -3.218333,
+    "Altitude": 34
+  },
+  {
+    "ID": "7222",
+    "Nom": "NANTES-BOUGUENAIS",
+    "Latitude": 47.15,
+    "Longitude": -1.608833,
+    "Altitude": 26
+  },
+  {
+    "ID": "7240",
+    "Nom": "TOURS",
+    "Latitude": 47.4445,
+    "Longitude": 0.727333,
+    "Altitude": 108
+  },
+  {
+    "ID": "7255",
+    "Nom": "BOURGES",
+    "Latitude": 47.059167,
+    "Longitude": 2.359833,
+    "Altitude": 161
+  },
+  {
+    "ID": "7280",
+    "Nom": "DIJON-LONGVIC",
+    "Latitude": 47.267833,
+    "Longitude": 5.088333,
+    "Altitude": 219
+  },
+  {
+    "ID": "7299",
+    "Nom": "BALE-MULHOUSE",
+    "Latitude": 47.614333,
+    "Longitude": 7.51,
+    "Altitude": 263
+  },
+  {
+    "ID": "7314",
+    "Nom": "PTE DE CHASSIRON",
+    "Latitude": 46.046833,
+    "Longitude": -1.4115,
+    "Altitude": 11
+  },
+  {
+    "ID": "7335",
+    "Nom": "POITIERS-BIARD",
+    "Latitude": 46.593833,
+    "Longitude": 0.314333,
+    "Altitude": 123
+  },
+  {
+    "ID": "7434",
+    "Nom": "LIMOGES-BELLEGARDE",
+    "Latitude": 45.861167,
+    "Longitude": 1.175,
+    "Altitude": 402
+  },
+  {
+    "ID": "7460",
+    "Nom": "CLERMONT-FD",
+    "Latitude": 45.786833,
+    "Longitude": 3.149333,
+    "Altitude": 331
+  },
+  {
+    "ID": "7471",
+    "Nom": "LE PUY-LOUDES",
+    "Latitude": 45.0745,
+    "Longitude": 3.764,
+    "Altitude": 833
+  },
+  {
+    "ID": "7481",
+    "Nom": "LYON-ST EXUPERY",
+    "Latitude": 45.7265,
+    "Longitude": 5.077833,
+    "Altitude": 235
+  },
+  {
+    "ID": "7510",
+    "Nom": "BORDEAUX-MERIGNAC",
+    "Latitude": 44.830667,
+    "Longitude": -0.691333,
+    "Altitude": 47
+  },
+  {
+    "ID": "7535",
+    "Nom": "GOURDON",
+    "Latitude": 44.745,
+    "Longitude": 1.396667,
+    "Altitude": 260
+  },
+  {
+    "ID": "7558",
+    "Nom": "MILLAU",
+    "Latitude": 44.1185,
+    "Longitude": 3.0195,
+    "Altitude": 712
+  },
+  {
+    "ID": "7577",
+    "Nom": "MONTELIMAR",
+    "Latitude": 44.581167,
+    "Longitude": 4.733,
+    "Altitude": 73
+  },
+  {
+    "ID": "7591",
+    "Nom": "EMBRUN",
+    "Latitude": 44.565667,
+    "Longitude": 6.502333,
+    "Altitude": 871
+  },
+  {
+    "ID": "7607",
+    "Nom": "MONT-DE-MARSAN",
+    "Latitude": 43.909833,
+    "Longitude": -0.500167,
+    "Altitude": 59
+  },
+  {
+    "ID": "7621",
+    "Nom": "TARBES-OSSUN",
+    "Latitude": 43.188,
+    "Longitude": 0,
+    "Altitude": 360
+  },
+  {
+    "ID": "7627",
+    "Nom": "ST GIRONS",
+    "Latitude": 43.005333,
+    "Longitude": 1.106833,
+    "Altitude": 414
+  },
+  {
+    "ID": "7630",
+    "Nom": "TOULOUSE-BLAGNAC",
+    "Latitude": 43.621,
+    "Longitude": 1.378833,
+    "Altitude": 151
+  },
+  {
+    "ID": "7643",
+    "Nom": "MONTPELLIER",
+    "Latitude": 43.577,
+    "Longitude": 3.963167,
+    "Altitude": 2
+  },
+  {
+    "ID": "7650",
+    "Nom": "MARIGNANE",
+    "Latitude": 43.437667,
+    "Longitude": 5.216,
+    "Altitude": 9
+  },
+  {
+    "ID": "7661",
+    "Nom": "CAP CEPET",
+    "Latitude": 43.079333,
+    "Longitude": 5.940833,
+    "Altitude": 115
+  },
+  {
+    "ID": "7690",
+    "Nom": "NICE",
+    "Latitude": 43.648833,
+    "Longitude": 7.209,
+    "Altitude": 2
+  },
+  {
+    "ID": "7747",
+    "Nom": "PERPIGNAN",
+    "Latitude": 42.737167,
+    "Longitude": 2.872833,
+    "Altitude": 42
+  },
+  {
+    "ID": "7761",
+    "Nom": "AJACCIO",
+    "Latitude": 41.918,
+    "Longitude": 8.792667,
+    "Altitude": 5
+  },
+  {
+    "ID": "7790",
+    "Nom": "BASTIA",
+    "Latitude": 42.540667,
+    "Longitude": 9.485167,
+    "Altitude": 10
+  }
+]

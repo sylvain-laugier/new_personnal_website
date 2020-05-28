@@ -3,8 +3,15 @@ import { Link } from "gatsby"
 
 import { rhythm, scale } from "../utils/typography"
 
-const Layout = ({ location, title, children }) => {
-  const rootPath = `${__PATH_PREFIX__}/`
+interface Props {
+  location: Location
+  title: string
+  children?: any
+}
+
+const Layout = ({ location, title, children }: Props) => {
+  // @ts-ignore
+  const rootPath = `${window.__PATH_PREFIX__}/`
   let header
 
   if (location.pathname === rootPath) {
@@ -19,6 +26,7 @@ const Layout = ({ location, title, children }) => {
         <Link
           style={{
             boxShadow: `none`,
+            textDecoration: `none`,
             color: `inherit`,
           }}
           to={`/`}
@@ -38,6 +46,7 @@ const Layout = ({ location, title, children }) => {
         <Link
           style={{
             boxShadow: `none`,
+            textDecoration: `none`,
             color: `inherit`,
           }}
           to={`/`}
@@ -47,6 +56,7 @@ const Layout = ({ location, title, children }) => {
       </h3>
     )
   }
+
   return (
     <div
       style={{
