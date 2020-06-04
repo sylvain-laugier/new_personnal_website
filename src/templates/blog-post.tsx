@@ -7,9 +7,11 @@ import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { MDXProvider } from "@mdx-js/react"
-import FranceMap from "../components/FranceMap"
+import FranceMapRR from "../components/FranceMapRR"
+import FranceMapNBJJRR from "../components/FranceMapNBJJRR"
+import FranceMapRRJOUR from "../components/FRanceMapRRJOUR"
 import Custom from "../components/custom"
-const shortcodes = { FranceMap, Custom }
+const shortcodes = { FranceMapRR, FranceMapNBJJRR, FranceMapRRJOUR, Custom }
 interface Props {
   data: {
     mdx: any

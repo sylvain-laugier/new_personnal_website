@@ -20,8 +20,8 @@ const NotFoundPage = ({ data }: Props) => {
   return (
     <Layout location={window.location} title={siteTitle}>
       <SEO title="404: Not Found" />
-      <h1>Not Found</h1>
-      <p>You just hit a route that doesn't exist... the sadness.</p>
+      <h1>On est sur une 404</h1>
+      <p>T'es perdu gamin</p>
     </Layout>
   )
 }

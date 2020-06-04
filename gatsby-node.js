@@ -1,7 +1,7 @@
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
 const { voronoiSingleton } = require("./sourceMeteoData/franceMap/prepareData")
-const pluieNord = require("./sourceMeteoData/weatherData/pluie_nord.json")
+const pluieSumByYear = require("./sourceMeteoData/weatherData/pluie_sum_by_year.json")
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
@@ -71,8 +71,8 @@ exports.sourceNodes = ({
   createContentDigest,
 }) => {
   const data = {
-    voronoi: voronoiSingleton.data,
-    weatherData: [pluieNord],
+    voronoiData: voronoiSingleton.data,
+    weatherData: { pluieSumByYear },
   }
   createNode({
     id: createNodeId("sourceMeteoData"),
