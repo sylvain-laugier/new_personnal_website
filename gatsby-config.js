@@ -71,6 +71,7 @@ module.exports = {
     },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-typescript`,
+    `gatsby-transformer-typescript-css-modules`,
     {
       resolve: `gatsby-plugin-typography`,
       options: {
