@@ -73,6 +73,14 @@ module.exports = {
     `gatsby-plugin-typescript`,
     `gatsby-transformer-typescript-css-modules`,
     {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: /svg-logo/,
+        },
+      },
+    },
+    {
       resolve: `gatsby-plugin-typography`,
       options: {
         pathToConfigModule: `src/utils/typography`,

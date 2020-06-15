@@ -1,0 +1,25 @@
+.logoContainer {
+  height: 64px;
+  width: 64px;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+}
+
+.logoContainer h3 {
+  color: #fff;
+  font-weight: 300;
+  text-transform: lowercase;
+  margin-bottom: 5px;
+  margin-left: 12px;
+}
+
+.logoContainer svg {
+  width: 32px;
+  height: 32px;
+  margin: auto;
+}
+
+.tooltip {
+  font-family: Montserrat, sans-serif;
+}
