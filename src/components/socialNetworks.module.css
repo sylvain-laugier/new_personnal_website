@@ -1,0 +1,19 @@
+.container {
+  position: fixed;
+  right: -80px;
+  bottom: 110px;
+  display: flex;
+  transform: rotate(-90deg);
+}
+
+.socialLinkContainer {
+  margin: 0 8px;
+  text-align: center;
+}
+
+a {
+  transition: color 0.4s;
+}
+a:hover {
+  color: white;
+}

@@ -1,5 +1,13 @@
 import Typography from "typography"
 
+const sansSerifTypo = [
+  "Montserrat",
+  "Helvetica Neue",
+  "Segoe UI",
+  "Helvetica",
+  "Arial",
+  "sans-serif",
+]
 const typography = new Typography({
   baseFontSize: "18px",
   baseLineHeight: 1.666,
@@ -13,15 +21,16 @@ const typography = new Typography({
       styles: ["400", "400i", "700", "700i"],
     },
   ],
-  headerFontFamily: [
-    "Montserrat",
-    "Helvetica Neue",
-    "Segoe UI",
-    "Helvetica",
-    "Arial",
-    "sans-serif",
-  ],
+  headerFontFamily: sansSerifTypo,
   bodyFontFamily: ["Georgia", "serif"],
+  overrideStyles: ({ adjustFontSizeTo }) => ({
+    a: {
+      ...adjustFontSizeTo("16px"),
+      color: "#9E9E9E",
+      textDecoration: "none",
+      fontFamily: sansSerifTypo.join(","),
+    },
+  }),
 })
 
 // Hot reload typography in development.
