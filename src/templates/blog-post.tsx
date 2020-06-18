@@ -1,17 +1,18 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 
-import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { rhythm, scale } from "../utils/typography"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { MDXProvider } from "@mdx-js/react"
-import FranceMapRR from "../components/FranceMapRR"
-import FranceMapNBJJRR from "../components/FranceMapNBJJRR"
-import FranceMapRRJOUR from "../components/FRanceMapRRJOUR"
-import Custom from "../components/custom"
-const shortcodes = { FranceMapRR, FranceMapNBJJRR, FranceMapRRJOUR, Custom }
+import FranceMapRR from "../components/blog/meteo-article/FranceMapRR"
+import FranceMapNBJJRR from "../components/blog/meteo-article/FranceMapNBJJRR"
+import FranceMapRRJOUR from "../components/blog/meteo-article/FRanceMapRRJOUR"
+import Img from "gatsby-image"
+import blogPostStyles from "./blog-post.module.css"
+import typography from "../utils/typography"
+
+const shortcodes = { FranceMapRR, FranceMapNBJJRR, FranceMapRRJOUR }
 interface Props {
   data: {
     mdx: any
@@ -24,68 +25,37 @@ interface Props {
   pageContext: any
 }
 
-const BlogPostTemplate = ({ data, pageContext }: Props) => {
+const BlogPostTemplate = ({ data }: Props) => {
   const post = data.mdx
+  const featuredImgFluid = post.frontmatter.featuredImage.childImageSharp.fluid
   const siteTitle = data.site.siteMetadata.title
-  const { previous, next } = pageContext
+
   return (
     <Layout location={window.location} title={siteTitle}>
-      <Custom />
       <SEO
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
       />
-      <h1
-        style={{
-          marginTop: rhythm(1),
-          marginBottom: 0,
-        }}
-      >
-        {post.frontmatter.title}
-      </h1>
-      <p
-        style={{
-          ...scale(-1 / 5),
-          display: `block`,
-          marginBottom: rhythm(1),
-        }}
-      >
-        {post.frontmatter.date}
-      </p>
+
+      <div className={blogPostStyles.headerContainer}>
+        <Img
+          className={blogPostStyles.featuredImage}
+          fluid={featuredImgFluid}
+        />
+        <div className={blogPostStyles.blogTitleContainer}>
+          <h1
+            className={blogPostStyles.blogTitle}
+            style={{ ...typography.adjustFontSizeTo("54px") }}
+          >
+            {post.frontmatter.title}
+          </h1>
+          <h3>Par Sylvain Laugier</h3>
+        </div>
+        <p>{post.frontmatter.date}</p>
+      </div>
       <MDXProvider components={shortcodes}>
         <MDXRenderer>{post.body}</MDXRenderer>
       </MDXProvider>
-      <hr
-        style={{
-          marginBottom: rhythm(1),
-        }}
-      />
-      <Bio />
-
-      <ul
-        style={{
-          display: `flex`,
-          flexWrap: `wrap`,
-          justifyContent: `space-between`,
-          listStyle: `none`,
-          padding: 0,
-        }}
-      >
-        <li>
-          {previous && (
-            <Link to={previous.fields.slug} rel="prev">
-              ← {previous.frontmatter.title}
-            </Link>
-          )}
-        </li>
-        <li>
-          {next && (
-            <Link to={next.fields.slug} rel="next">
-              {next.frontmatter.title} →
-            </Link>
-          )}
-        </li>
-      </ul>
     </Layout>
   )
 }
@@ -97,9 +67,6 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
-        author {
-          name
-        }
       }
     }
     mdx(fields: { slug: { eq: $slug } }) {
@@ -110,6 +77,14 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        author
+        featuredImage {
+          childImageSharp {
+            fluid(maxWidth: 1920, quality: 100) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
     }
   }

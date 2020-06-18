@@ -6,7 +6,7 @@ const Menu = () => {
   return (
     <nav className={MenuStyles.container}>
       <Link className={MenuStyles.navLink} to="blog">
-        Blog
+        Le Blog
       </Link>
       <Link className={MenuStyles.navLink} to="/">
         /

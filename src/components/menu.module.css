@@ -1,9 +1,10 @@
 .container {
   position: fixed;
-  right: 0;
-  top: 24px;
+  right: -16px;
+  top: 32px;
   display: flex;
   transform: rotate(-90deg);
+  z-index: 10;
 }
 
 .navLink {
