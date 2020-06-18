@@ -10,7 +10,7 @@ import FranceMapNBJJRR from "../components/blog/meteo-article/FranceMapNBJJRR"
 import FranceMapRRJOUR from "../components/blog/meteo-article/FRanceMapRRJOUR"
 import Img from "gatsby-image"
 import blogPostStyles from "./blog-post.module.css"
-import typography from "../utils/typography"
+import typography, { sansSerifTypo } from "../utils/typography"
 
 const shortcodes = { FranceMapRR, FranceMapNBJJRR, FranceMapRRJOUR }
 interface Props {
@@ -29,28 +29,46 @@ const BlogPostTemplate = ({ data }: Props) => {
   const post = data.mdx
   const featuredImgFluid = post.frontmatter.featuredImage.childImageSharp.fluid
   const siteTitle = data.site.siteMetadata.title
-
+  const { title, description, author, date } = post.frontmatter
   return (
     <Layout location={window.location} title={siteTitle}>
-      <SEO
-        title={post.frontmatter.title}
-        description={post.frontmatter.description || post.excerpt}
-      />
+      <SEO title={title} description={description || post.excerpt} />
 
       <div className={blogPostStyles.headerContainer}>
         <Img
           className={blogPostStyles.featuredImage}
           fluid={featuredImgFluid}
         />
-        <div className={blogPostStyles.blogTitleContainer}>
-          <h1
-            className={blogPostStyles.blogTitle}
-            style={{ ...typography.adjustFontSizeTo("54px") }}
-          >
-            {post.frontmatter.title}
-          </h1>
-          <h3>Par Sylvain Laugier</h3>
+        <div className={blogPostStyles.blogHeaderContentContainer}>
+          <div className={blogPostStyles.blogTitleContainer}>
+            <h1
+              className={blogPostStyles.blogTitle}
+              style={{ ...typography.adjustFontSizeTo("54px") }}
+            >
+              {title}
+            </h1>
+            <div className={blogPostStyles.titleDivider} />
+            <div className={blogPostStyles.descriptionContainer}>
+              <p className={blogPostStyles.description}>{description}</p>
+              <p>par {author}</p>
+            </div>
+          </div>
         </div>
+        <div className={blogPostStyles.arrowContainer}>
+          <svg
+            className={blogPostStyles.makeItBounce}
+            version="1.1"
+            viewBox="0 0 64 64"
+            width="64px"
+            height="64px"
+          >
+            <g>
+              <line x1="9" y1="23" x2="33" y2="40.7"></line>
+              <line x1="53.9" y1="23" x2="30" y2="40.7"></line>
+            </g>
+          </svg>
+        </div>
+
         <p>{post.frontmatter.date}</p>
       </div>
       <MDXProvider components={shortcodes}>

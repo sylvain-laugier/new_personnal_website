@@ -1,6 +1,6 @@
 import Typography from "typography"
 
-const sansSerifTypo = [
+export const sansSerifTypo = [
   "Montserrat",
   "Helvetica Neue",
   "Segoe UI",
@@ -22,7 +22,7 @@ const typography = new Typography({
     },
   ],
   headerFontFamily: sansSerifTypo,
-  bodyFontFamily: ["Georgia", "serif"],
+  bodyFontFamily: sansSerifTypo,
   overrideStyles: ({ adjustFontSizeTo }) => ({
     a: {
       ...adjustFontSizeTo("16px"),
