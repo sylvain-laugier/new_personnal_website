@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 import { Link, graphql, StaticQuery, useStaticQuery } from "gatsby"
 import * as am4core from "@amcharts/amcharts4/core"
 import * as am4maps from "@amcharts/amcharts4/maps"
+import franceMapStyles from "./franceMap.module.css"
 
 export enum LabelTypes {
   INST = "INST",
@@ -13,6 +14,7 @@ export enum LabelTypes {
 }
 interface FranceMapProps {
   label: LabelTypes
+  mapTitle: string
 }
 
 interface VoronoiData {
@@ -51,7 +53,7 @@ interface franceMapData {
   }
 }
 
-const FranceMap: FunctionComponent<FranceMapProps> = ({ label }) => {
+const FranceMap: FunctionComponent<FranceMapProps> = ({ label, mapTitle }) => {
   const pageQuery = useStaticQuery<franceMapData>(graphql`
     query franceMapData {
       sourceMeteoData {
@@ -119,11 +121,12 @@ const FranceMap: FunctionComponent<FranceMapProps> = ({ label }) => {
     }
   }, [pageQuery])
   return (
-    <div
-      style={{ height: "800px", width: "1200px" }}
-      id="test"
-      ref={graphRef}
-    ></div>
+    <div className={franceMapStyles.container}>
+      <div className={franceMapStyles.mapTitle}>
+        <h3>{mapTitle}</h3>
+      </div>
+      <div className={franceMapStyles.map} ref={graphRef}></div>
+    </div>
   )
 }
 

@@ -9,3 +9,4 @@ export const description: string;
 export const arrowContainer: string;
 export const makeItBounce: string;
 export const bounce: string;
+export const postBody: string;

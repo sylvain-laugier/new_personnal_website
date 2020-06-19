@@ -72,7 +72,9 @@ const BlogPostTemplate = ({ data }: Props) => {
         <p>{post.frontmatter.date}</p>
       </div>
       <MDXProvider components={shortcodes}>
-        <MDXRenderer>{post.body}</MDXRenderer>
+        <div className={blogPostStyles.postBody}>
+          <MDXRenderer>{post.body}</MDXRenderer>
+        </div>
       </MDXProvider>
     </Layout>
   )
