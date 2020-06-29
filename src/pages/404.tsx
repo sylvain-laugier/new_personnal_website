@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import styles404 from "./404.module.css"
 
 interface Props {
   data: {
@@ -20,8 +21,12 @@ const NotFoundPage = ({ data }: Props) => {
   return (
     <Layout location={window.location} title={siteTitle}>
       <SEO title="404: Not Found" />
-      <h1>On est sur une 404</h1>
-      <p>T'es perdu gamin</p>
+      <div className={styles404.container}>
+        <div>
+          <h1>404</h1>
+          <h2>This is not the page you're looking for</h2>
+        </div>
+      </div>
     </Layout>
   )
 }
