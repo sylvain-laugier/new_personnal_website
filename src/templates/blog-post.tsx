@@ -8,11 +8,17 @@ import { MDXProvider } from "@mdx-js/react"
 import FranceMapRR from "../components/blog/meteo-article/FranceMapRR"
 import FranceMapNBJJRR from "../components/blog/meteo-article/FranceMapNBJJRR"
 import FranceMapRRJOUR from "../components/blog/meteo-article/FRanceMapRRJOUR"
+import MeteoChapter from "../components/blog/meteo-article/MeteoChapter"
 import Img from "gatsby-image"
 import blogPostStyles from "./blog-post.module.css"
 import typography, { sansSerifTypo } from "../utils/typography"
 
-const shortcodes = { FranceMapRR, FranceMapNBJJRR, FranceMapRRJOUR }
+const shortcodes = {
+  FranceMapRR,
+  FranceMapNBJJRR,
+  FranceMapRRJOUR,
+  MeteoChapter,
+}
 interface Props {
   data: {
     mdx: any
