@@ -1,14 +1,14 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `Sylvain Laugier`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `Sylvain Laugier`,
+      summary: `Full Stack Web Developper`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
+    description: `Sylvain Laugier, Full Stack Developper`,
     siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `Sylvain_Laugier`,
     },
   },
   plugins: [
@@ -71,7 +71,6 @@ module.exports = {
     },
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-typescript`,
-    `gatsby-transformer-typescript-css-modules`,
     {
       resolve: "gatsby-plugin-react-svg",
       options: {

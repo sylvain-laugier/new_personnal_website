@@ -5,15 +5,12 @@ import SEO from "./seo"
 import LayoutStyles from "./layout.module.css"
 
 interface Props {
-  location: Location
+  location?: Location
   title: string
   children?: any
 }
 
 const Layout = ({ location, title, children }: Props) => {
-  // @ts-ignore
-  const rootPath = `${window.__PATH_PREFIX__}/`
-
   return (
     <div
       style={{

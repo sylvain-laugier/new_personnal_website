@@ -1,12 +1,9 @@
 {
-  "name": "gatsby-starter-blog",
+  "name": "sylvain-laugier-website",
   "private": true,
-  "description": "A starter for a blog powered by Gatsby and Markdown",
+  "description": "Sylvain Laugier personnal website",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
-  },
+  "author": "Kyle Mathews <sylvain.laugier.net@gmail.com>",
   "dependencies": {
     "@amcharts/amcharts4": "4.8.1",
     "@mdx-js/mdx": "^1.6.4",
