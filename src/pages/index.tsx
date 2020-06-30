@@ -8,6 +8,7 @@ import Hello from "../components/home/hello"
 import SocialNetworks from "../components/home/SocialNetworks"
 import Technologies from "../components/home/Technologies"
 import Layout from "../components/layout"
+import PortFolio from "../components/home/PortFolio"
 
 const seoTitle = "sylvain's awesome website"
 
@@ -34,23 +35,26 @@ function HomePage({ location }: PageProps<Data>) {
   return (
     <Layout location={location} title={siteTitle}>
       <div className={homeStyles.mainContainer}>
-        <Hello />
-        <div className={homeStyles.punchLineContainer}>
-          <h1
-            className={`${homeStyles.punchLine} ${homeStyles.fadeInFromLeft}`}
-          >
-            I'm Sylvain, a creative full stack web developer
-          </h1>
-          <h3
-            className={`${homeStyles.punchLineSecond} ${homeStyles.fadeInFromLeft}`}
-          >
-            I've been coding for 5 years, including 2 years as a professionnal
-            developer. I like to make strongly design-oriented websites using
-            cutting edge web technologies.
-          </h3>
+        <div className={homeStyles.contentContainer}>
+          <Hello />
+          <div className={homeStyles.punchLineContainer}>
+            <h1
+              className={`${homeStyles.punchLine} ${homeStyles.fadeInFromLeft}`}
+            >
+              I'm Sylvain, a creative full stack web developer
+            </h1>
+            <h3
+              className={`${homeStyles.punchLineSecond} ${homeStyles.fadeInFromLeft}`}
+            >
+              I've been coding for 5 years, including 2 years as a professionnal
+              developer. I like to make strongly design-oriented websites using
+              cutting edge web technologies.
+            </h3>
+          </div>
+          <Technologies />
+          <PortFolio />
+          <SocialNetworks />
         </div>
-        <Technologies />
-        <SocialNetworks />
       </div>
     </Layout>
   )

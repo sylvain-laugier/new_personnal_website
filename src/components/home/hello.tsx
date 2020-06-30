@@ -9,7 +9,7 @@ const Hello = () => {
         wrapper={
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            viewBox="100 75 175 60"
+            viewBox="100 70 175 60"
             className={HelloStyles.helloSvg}
           >
             <g id="layer1">

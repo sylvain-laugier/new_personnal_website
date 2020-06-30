@@ -6,6 +6,21 @@
   transform: rotate(-90deg);
 }
 
+@media (max-width: 700px) {
+  .container {
+    right: 0;
+    bottom: 0;
+    justify-content: space-evenly;
+    width: 100vw;
+    transform: rotate(0deg);
+    margin-bottom: 8px;
+  }
+
+  .container a {
+    font-size: 1.4rem;
+  }
+}
+
 .socialLinkContainer {
   margin: 0 8px;
   text-align: center;

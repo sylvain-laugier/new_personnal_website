@@ -14,16 +14,17 @@
 .technoLogoContainer {
   display: flex;
   flex-direction: column;
-  width: 480px;
-  margin: 16px auto 0 auto;
+  width: 95%;
+  max-width: 480px;
+  margin: 16px 2.5% 0 2.5%;
   background: white;
   border-radius: 10px 10px 10px 10px;
   -moz-border-radius: 10px 10px 10px 10px;
   -webkit-border-radius: 10px 10px 10px 10px;
   -webkit-animation-duration: 0.5s;
   animation-duration: 0.5s;
-  -webkit-animation-delay: 8s;
-  animation-delay: 8s;
+  -webkit-animation-delay: 8.5s;
+  animation-delay: 8.5s;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
   -webkit-animation-name: fadeIn;
