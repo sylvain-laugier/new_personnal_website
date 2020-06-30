@@ -6,7 +6,6 @@ import ReactTooltip from "react-tooltip"
 const Menu = () => {
   return (
     <>
-      <ReactTooltip />
       <nav className={MenuStyles.container}>
         <p className={MenuStyles.navLink} data-tip="Soon...">
           Le Blog
