@@ -4,6 +4,7 @@
   display: flex;
   flex-flow: row;
   align-items: center;
+  position: relative;
 }
 
 .logoContainer h3 {
@@ -20,6 +21,25 @@
   margin: auto;
 }
 
-.tooltip {
+/* Tooltip text */
+.logoContainer .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  font-size: 16px;
   font-family: Montserrat, sans-serif;
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+  top: -32px;
+  left: -24px;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.logoContainer:hover .tooltiptext {
+  visibility: visible;
 }

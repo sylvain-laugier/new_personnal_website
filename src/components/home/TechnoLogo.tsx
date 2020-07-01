@@ -13,36 +13,31 @@ import RxJSLogo from "../../svg-logo/rxjs-logo.svg"
 import AngularLogo from "../../svg-logo/angular-logo.svg"
 import ExpressLogo from "../../svg-logo/express-logo.svg"
 import technoLogoStyles from "./technoLogo.module.css"
-import ReactTooltip from "react-tooltip"
 
 interface TechnoLogoProps {
   logoName: string
 }
 
 export enum LogoNames {
-  ReactLogo = "ReactLogo",
-  TypescriptLogo = "TypescriptLogo",
-  JavascriptLogo = "JavascriptLogo",
-  ReduxLogo = "ReduxLogo",
-  NodeJSLogo = "NodeJSLogo",
-  MongoDBLogo = "MongoDBLogo",
-  Neo4JLogo = "Neo4JLogo",
-  PythonLogo = "PythonLogo",
-  PandasLogo = "PandasLogo",
-  GatsbyJSLogo = "GatsbyJSLogo",
-  RxJSLogo = "RxJSLogo",
-  AngularLogo = "AngularLogo",
-  ExpressLogo = "ExpressLogo",
+  ReactLogo = "React",
+  TypescriptLogo = "Typescript",
+  JavascriptLogo = "Javascript",
+  ReduxLogo = "Redux",
+  NodeJSLogo = "NodeJS",
+  MongoDBLogo = "MongoDB",
+  Neo4JLogo = "Neo4J",
+  PythonLogo = "Python",
+  PandasLogo = "Pandas",
+  GatsbyJSLogo = "GatsbyJS",
+  RxJSLogo = "RxJS",
+  AngularLogo = "Angular",
+  ExpressLogo = "Express",
 }
 const TechnoLogo = ({ logoName }: TechnoLogoProps): JSX.Element => {
   return (
     <div className={technoLogoStyles.logoContainer}>
       {getLogoComponent(logoName)}
-      <ReactTooltip
-        type="dark"
-        effect="solid"
-        className={technoLogoStyles.tooltip}
-      />
+      <span className={technoLogoStyles.tooltiptext}>{logoName}</span>
     </div>
   )
 }
@@ -52,91 +47,91 @@ function getLogoComponent(logoName: string): JSX.Element {
     case LogoNames.ReactLogo: {
       return (
         <>
-          <ReactLogo data-tip="React" />
+          <ReactLogo />
         </>
       )
     }
     case LogoNames.TypescriptLogo: {
       return (
         <>
-          <TypescriptLogo data-tip="Typescript" />
+          <TypescriptLogo />
         </>
       )
     }
     case LogoNames.JavascriptLogo: {
       return (
         <>
-          <JavascriptLogo data-tip="Javascript" />
+          <JavascriptLogo />
         </>
       )
     }
     case LogoNames.ReduxLogo: {
       return (
         <>
-          <ReduxLogo data-tip="Redux" />
+          <ReduxLogo />
         </>
       )
     }
     case LogoNames.NodeJSLogo: {
       return (
         <>
-          <NodeJSLogo style={{ width: 64 }} data-tip="Node JS" />
+          <NodeJSLogo style={{ width: 64 }} />
         </>
       )
     }
     case LogoNames.MongoDBLogo: {
       return (
         <>
-          <MongoDBLogo data-tip="Mongo DB" />
+          <MongoDBLogo />
         </>
       )
     }
     case LogoNames.Neo4JLogo: {
       return (
         <>
-          <Neo4JLogo data-tip="Neo 4J" />
+          <Neo4JLogo />
         </>
       )
     }
     case LogoNames.PythonLogo: {
       return (
         <>
-          <PythonLogo data-tip="Python" />
+          <PythonLogo />
         </>
       )
     }
     case LogoNames.PandasLogo: {
       return (
         <>
-          <PandasLogo data-tip="Pandas" />
+          <PandasLogo />
         </>
       )
     }
     case LogoNames.GatsbyJSLogo: {
       return (
         <>
-          <GatsbyJSLogo data-tip="Gatsby" />
+          <GatsbyJSLogo />
         </>
       )
     }
     case LogoNames.AngularLogo: {
       return (
         <>
-          <AngularLogo data-tip="Angular" />
+          <AngularLogo />
         </>
       )
     }
     case LogoNames.RxJSLogo: {
       return (
         <>
-          <RxJSLogo data-tip="RxJS" />
+          <RxJSLogo />
         </>
       )
     }
     case LogoNames.ExpressLogo: {
       return (
         <>
-          <ExpressLogo style={{ width: 64 }} data-tip="Express" />
+          <ExpressLogo style={{ width: 64 }} />
         </>
       )
     }
