@@ -2,11 +2,8 @@
   margin: 2% auto 8px auto;
   width: 25%;
   min-width: 250px;
-}
-
-@media screen and (min-height: 700px) {
-  .container {
-  }
+  opacity: 0;
+  animation: opacite 0.2s linear forwards 0s;
 }
 
 .helloSvg path {
@@ -15,6 +12,11 @@
   animation: fillItUp 0.5s linear forwards 1.5s;
 }
 
+@keyframes opacite {
+  to {
+    opacity: 1;
+  }
+}
 @keyframes fillItUp {
   to {
     fill-opacity: 1;
