@@ -17,8 +17,8 @@ const Hello = () => {
             </g>
           </svg>
         }
-        from={{ svgDraw: [0, 0] }}
-        to={{ svgDraw: [1, 0] }}
+        from={{ strokeOpacity: 1, svgDraw: [0, 0] }}
+        to={{ strokeOpacity: 1, svgDraw: [1, 0] }}
         duration={1.5}
       >
         <path
