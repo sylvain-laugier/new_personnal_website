@@ -1,13 +1,17 @@
 import React, { useRef, useEffect } from "react"
 import meteoChapterStyles from "./meteoChapter.module.css"
-import useThree from "../../../hooks/useThreeJs"
+import useRainScene from "../../../hooks/useRainScene"
 import useWindowSize from "../../../hooks/useWindowSize"
 import useCameraControls from "../../../hooks/useCameraControls"
 
-const MeteoChapter = () => {
+interface MeteoChapterProps {
+  children?: any
+}
+
+const MeteoChapter = ({ children }: MeteoChapterProps) => {
   const threeTargetRef = useRef<HTMLDivElement>(null)
   const windowSize = useWindowSize()
-  const { renderer, camera } = useThree({
+  const { renderer, camera } = useRainScene({
     ...windowSize,
   })
 
@@ -22,7 +26,9 @@ const MeteoChapter = () => {
     <div className={meteoChapterStyles.container}>
       <div className={meteoChapterStyles.chapterContainer}>
         <div ref={threeTargetRef}></div>
+        <h2 className={meteoChapterStyles.chapterTitle}>Partie 1 : la pluie</h2>
       </div>
+      <div>{children}</div>
     </div>
   )
 }

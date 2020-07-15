@@ -6,10 +6,9 @@ const Menu = () => {
   return (
     <>
       <nav className={MenuStyles.container}>
-        <div className={MenuStyles.tooltipped}>
-          <p className={MenuStyles.navLink}>Le Blog</p>
-          <span className={MenuStyles.tooltiptext}>soon...</span>
-        </div>
+        <Link className={MenuStyles.navLink} to="/blog">
+          le blog
+        </Link>
         <Link className={MenuStyles.navLink} to="/">
           /
         </Link>
