@@ -1,6 +1,6 @@
 .container {
   width: 100%;
-  background-color: white;
+  background-color: rgba(35, 35, 70, 0.5);
   display: flex;
   margin: 8px auto;
   height: 960px;
@@ -20,7 +20,7 @@
   height: 10%;
   width: 100%;
   display: flex;
-  color: #232346;
+  color: white;
   justify-content: center;
   padding-top: 16px;
 }
