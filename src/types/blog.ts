@@ -2,7 +2,11 @@ import { FluidObject } from "gatsby-image"
 
 export interface PostNode {
   excerpt: string
+  body: any
   frontmatter: {
+    postId: string
+    chapterIndex: number
+    template: string
     title: string
     date: string
     description: string

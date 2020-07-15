@@ -32,7 +32,10 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMdx(
+      sort: { fields: [frontmatter___date], order: DESC }
+      filter: { frontmatter: { chapterIndex: { eq: 0 } } }
+    ) {
       edges {
         node {
           excerpt

@@ -6,7 +6,7 @@ const pluieSumByYear = require("./sourceMeteoData/weatherData/pluie_sum_by_year.
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
-  const blogPost = path.resolve(`./src/templates/blog-post.tsx`)
+  const blogPost = path.resolve(`./src/templates/blogPost.tsx`)
   const result = await graphql(
     `
       {
@@ -21,6 +21,7 @@ exports.createPages = async ({ graphql, actions }) => {
               }
               frontmatter {
                 title
+                postId
               }
             }
           }
@@ -34,22 +35,25 @@ exports.createPages = async ({ graphql, actions }) => {
   }
 
   // Create blog posts pages.
-  const posts = result.data.allMdx.edges
+  const posts = result.data.allMdx.edges.filter(
+    post => !post.node.frontmatter.chapterIndex
+  )
 
-  // posts.forEach((post, index) => {
-  //   const previous = index === posts.length - 1 ? null : posts[index + 1].node
-  //   const next = index === 0 ? null : posts[index - 1].node
+  posts.forEach((post, index) => {
+    const previous = index === posts.length - 1 ? null : posts[index + 1].node
+    const next = index === 0 ? null : posts[index - 1].node
 
-  //   createPage({
-  //     path: post.node.fields.slug,
-  //     component: blogPost,
-  //     context: {
-  //       slug: post.node.fields.slug,
-  //       previous,
-  //       next,
-  //     },
-  //   })
-  // })
+    createPage({
+      path: post.node.fields.slug,
+      component: blogPost,
+      context: {
+        slug: post.node.fields.slug,
+        postId: post.node.frontmatter.postId,
+        previous,
+        next,
+      },
+    })
+  })
 }
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
