@@ -24,11 +24,18 @@ const MeteoChapter = ({ children }: MeteoChapterProps) => {
 
   return (
     <div className={meteoChapterStyles.container}>
-      <div className={meteoChapterStyles.chapterContainer}>
-        <div ref={threeTargetRef}></div>
-        <h2 className={meteoChapterStyles.chapterTitle}>Partie 1 : la pluie</h2>
+      <div
+        className={meteoChapterStyles.canvasContainer}
+        ref={threeTargetRef}
+      ></div>
+      <div className={meteoChapterStyles.contentContainer}>
+        <div className={meteoChapterStyles.chapterTitleContainer}>
+          <h2 className={meteoChapterStyles.chapterTitle}>
+            Partie 1 : la pluie
+          </h2>
+        </div>
+        <div className={meteoChapterStyles.bodyContainer}>{children}</div>
       </div>
-      <div>{children}</div>
     </div>
   )
 }

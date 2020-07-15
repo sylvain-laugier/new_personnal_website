@@ -3,15 +3,9 @@ import { Link, graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import { MDXRenderer } from "gatsby-plugin-mdx"
-import { MDXProvider } from "@mdx-js/react"
-import FranceMapRR from "../components/blog/meteo-article/FranceMapRR"
-import FranceMapNBJJRR from "../components/blog/meteo-article/FranceMapNBJJRR"
-import FranceMapRRJOUR from "../components/blog/meteo-article/FRanceMapRRJOUR"
-import MeteoChapter from "../components/blog/meteo-article/MeteoChapter"
 import Img from "gatsby-image"
 import meteoStyles from "./meteo.module.css"
-import typography, { sansSerifTypo } from "../utils/typography"
+import typography from "../utils/typography"
 import MeteoTemplate from "./meteo"
 import { PostNode } from "../types/blog"
 
@@ -34,7 +28,6 @@ interface Props {
 const BlogPostTemplate = ({ data }: Props) => {
   const posts = data.allMdx.edges.map(({ node }) => node)
   const mainPost = posts[0]
-
   const featuredImgFluid =
     mainPost.frontmatter.featuredImage.childImageSharp.fluid
   const siteTitle = data.site.siteMetadata.title
@@ -99,7 +92,10 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMdx(filter: { frontmatter: { postId: { eq: $postId } } }) {
+    allMdx(
+      sort: { fields: [frontmatter___chapterIndex], order: ASC }
+      filter: { frontmatter: { postId: { eq: $postId } } }
+    ) {
       edges {
         node {
           id
