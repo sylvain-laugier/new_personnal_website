@@ -1,17 +1,11 @@
 import React, { useEffect, useRef, FunctionComponent } from "react"
-import PropTypes from "prop-types"
-import { Link, graphql, StaticQuery, useStaticQuery } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
 import * as am4core from "@amcharts/amcharts4/core"
 import * as am4maps from "@amcharts/amcharts4/maps"
-import franceMapStyles from "./franceMap.module.css"
 
-export enum LabelTypes {
-  INST = "INST",
-  RR = "RR",
-  NBJRR1 = "NBJRR1",
-  NBRR = "NBRR",
-  RRJOUR = "RRJOUR",
-}
+import franceMapStyles from "./franceMap.module.css"
+import { LabelTypes } from "./FranceMap-types"
+
 interface FranceMapProps {
   label: LabelTypes
   mapTitle: string

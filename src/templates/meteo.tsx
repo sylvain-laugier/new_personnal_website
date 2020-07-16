@@ -1,19 +1,16 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
-
-import Layout from "../components/layout"
-import SEO from "../components/seo"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { MDXProvider } from "@mdx-js/react"
 import FranceMapRR from "../components/blog/meteo-article/FranceMapRR"
 import FranceMapNBJJRR from "../components/blog/meteo-article/FranceMapNBJJRR"
 import FranceMapRRJOUR from "../components/blog/meteo-article/FRanceMapRRJOUR"
-import MeteoChapter from "../components/blog/meteo-article/MeteoChapter"
-import Img from "gatsby-image"
 import meteoStyles from "./meteo.module.css"
-import typography, { sansSerifTypo } from "../utils/typography"
 import { PostNode } from "../types/blog"
+import loadable from "@loadable/component"
 
+const MeteoChapter = loadable(() =>
+  import("../components/blog/meteo-article/MeteoChapter")
+)
 const shortcodes = {
   FranceMapRR,
   FranceMapNBJJRR,

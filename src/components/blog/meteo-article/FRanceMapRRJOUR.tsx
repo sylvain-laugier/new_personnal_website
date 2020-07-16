@@ -1,5 +1,8 @@
 import React from "react"
-import FranceMap, { LabelTypes } from "./FranceMap"
+import { LabelTypes } from "./FranceMap-types"
+import loadable from "@loadable/component"
+
+const FranceMap = loadable(() => import("./FranceMap"))
 
 const FranceMapRRJOUR = () => (
   <FranceMap

@@ -9,8 +9,10 @@ interface UseRainSceneParams {
   height?: number
 }
 const useRainScene = ({ width, height }: UseRainSceneParams) => {
-  const usedWidth = width || window.innerWidth
-  const usedHeight = height || window.innerHeight
+  const usedWidth =
+    width || typeof window !== "undefined" ? window.innerWidth : 0
+  const usedHeight =
+    height || typeof window !== "undefined" ? window.innerHeight : 0
   const { clouds } = useClouds(10, usedWidth, usedHeight)
   const flash = useThunder(usedWidth, usedHeight)
   const { rain, rainDropVelocity } = useRain(usedWidth, usedHeight, 20000)

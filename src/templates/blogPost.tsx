@@ -1,5 +1,5 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -33,7 +33,10 @@ const BlogPostTemplate = ({ data }: Props) => {
   const siteTitle = data.site.siteMetadata.title
   const { title, description, author, date, template } = mainPost.frontmatter
   return (
-    <Layout location={window.location} title={siteTitle}>
+    <Layout
+      location={typeof window !== "undefined" ? window.location : undefined}
+      title={siteTitle}
+    >
       <SEO title={title} description={description || mainPost.excerpt} />
 
       <div className={meteoStyles.headerContainer}>
