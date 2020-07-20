@@ -14,7 +14,6 @@ const useRainScene = ({ width, height }: UseRainSceneParams) => {
   const usedHeight =
     height || typeof window !== "undefined" ? window.innerHeight : 0
   const { clouds } = useClouds(10, usedWidth, usedHeight)
-  const flash = useThunder(usedWidth, usedHeight)
   const { rain, rainDropVelocity } = useRain(usedWidth, usedHeight, 20000)
 
   const threenv = useRef({
@@ -22,7 +21,6 @@ const useRainScene = ({ width, height }: UseRainSceneParams) => {
     scene: new THREE.Scene(),
     camera: new THREE.PerspectiveCamera(75, usedWidth / usedHeight, 0.1, 1000),
     clouds,
-    flash,
   })
 
   useEffect(() => {
@@ -59,17 +57,6 @@ const useRainScene = ({ width, height }: UseRainSceneParams) => {
       rain.geometry.verticesNeedUpdate = true
       rain.rotation.y += 0.002
 
-      if (Math.random() > 0.97) {
-        threenv.current.flash.power = 50 + Math.random() * 300
-        if (threenv.current.flash.power < 100)
-          threenv.current.flash.position.set(
-            getPositionInterval("x", { width: usedWidth }),
-            500,
-            getPositionInterval("z", { height: usedHeight })
-          )
-      } else {
-        threenv.current.flash.power = 0
-      }
       threenv.current.renderer.render(
         threenv.current.scene,
         threenv.current.camera
@@ -88,12 +75,6 @@ const useRainScene = ({ width, height }: UseRainSceneParams) => {
     clouds.forEach(cloud => threenv.current.scene.add(cloud))
     threenv.current.clouds = clouds
   }, [clouds])
-
-  useEffect(() => {
-    threenv.current.scene.remove(threenv.current.flash)
-    threenv.current.flash = flash
-    threenv.current.scene.add(threenv.current.flash)
-  }, [flash])
 
   return threenv.current
 }

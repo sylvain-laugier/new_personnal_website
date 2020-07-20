@@ -6,7 +6,7 @@ const FranceMap = loadable(() => import("./FranceMap"))
 
 const FranceMapRRJOUR = () => (
   <FranceMap
-    mapTitle="Moyenne des précipitations quotidienne"
+    mapTitle="Quantité de pluie moyenne par jour de pluie en mm"
     label={LabelTypes.RRJOUR}
   />
 )

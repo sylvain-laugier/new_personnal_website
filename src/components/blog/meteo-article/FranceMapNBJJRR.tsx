@@ -5,7 +5,10 @@ import loadable from "@loadable/component"
 const FranceMap = loadable(() => import("./FranceMap"))
 
 const FranceMapRR = () => (
-  <FranceMap mapTitle="Nombre de jour de pluie" label={LabelTypes.NBJRR1} />
+  <FranceMap
+    mapTitle="Nombre de jour par an où il pleut au moins 1mm"
+    label={LabelTypes.NBJRR1}
+  />
 )
 
 export default FranceMapRR

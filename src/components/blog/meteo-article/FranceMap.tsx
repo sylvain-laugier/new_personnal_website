@@ -21,7 +21,7 @@ interface VoronoiData {
 }
 
 interface VoronoiSeriesData extends VoronoiData {
-  value?: number
+  value?: string
 }
 
 interface WeatherData {
@@ -84,7 +84,8 @@ const FranceMap: FunctionComponent<FranceMapProps> = ({ label, mapTitle }) => {
       const weatherData =
         pageQuery.sourceMeteoData.data.weatherData.pluieSumByYear.data
       var chart = am4core.create(graphRef.current, am4maps.MapChart)
-
+      chart.maxZoomLevel = 1
+      chart.chartContainer.wheelable = false;
       // Set map definition
       // Set projection
       chart.projection = new am4maps.projections.Miller()
@@ -94,9 +95,12 @@ const FranceMap: FunctionComponent<FranceMapProps> = ({ label, mapTitle }) => {
           const weatherStation = weatherData.find(
             weatherDatum => weatherDatum["NUM_POSTE"] == voronoiStation.id
           )
+
           return {
             ...voronoiStation,
-            value: weatherStation ? weatherStation[label] : undefined,
+            value: weatherStation
+              ? weatherStation[label].toFixed(0)
+              : undefined,
           }
         }
       )
@@ -105,7 +109,7 @@ const FranceMap: FunctionComponent<FranceMapProps> = ({ label, mapTitle }) => {
 
       voronoiSeries.data = voronoiSeriesData
       let voronoiTemplate = voronoiSeries.mapPolygons.template
-      voronoiTemplate.tooltipText = "{nom}{value}"
+      voronoiTemplate.tooltipText = "{nom} {value}"
       voronoiSeries.heatRules.push({
         property: "fill",
         target: voronoiTemplate,
@@ -117,7 +121,7 @@ const FranceMap: FunctionComponent<FranceMapProps> = ({ label, mapTitle }) => {
   return (
     <div className={franceMapStyles.container}>
       <div className={franceMapStyles.mapTitle}>
-        <h3>{mapTitle}</h3>
+        <h4>{mapTitle}</h4>
       </div>
       <div className={franceMapStyles.map} ref={graphRef}></div>
     </div>

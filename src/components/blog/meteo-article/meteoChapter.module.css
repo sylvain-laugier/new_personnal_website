@@ -19,6 +19,14 @@
   top: -100vh;
 }
 
+.contentContainer h3 {
+  background: white;
+  color: rgba(35, 35, 70, 1);
+  text-transform: uppercase;
+  padding: 8px;
+  font-style: italic;
+}
+
 .chapterTitleContainer {
   height: 150vh;
   display: flex;
