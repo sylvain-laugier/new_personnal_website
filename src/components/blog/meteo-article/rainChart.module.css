@@ -1,0 +1,12 @@
+.chartContainer {
+  width: 50%;
+}
+
+.titleChart {
+  text-align: center;
+}
+
+.chart {
+  height: 200px;
+  padding: 8px;
+}

@@ -4,6 +4,11 @@ import { MDXProvider } from "@mdx-js/react"
 import FranceMapRR from "../components/blog/meteo-article/FranceMapRR"
 import FranceMapNBJJRR from "../components/blog/meteo-article/FranceMapNBJJRR"
 import FranceMapRRJOUR from "../components/blog/meteo-article/FRanceMapRRJOUR"
+import BretagneNormandieCitiesRainChart from "../components/blog/meteo-article/BretagneNormandieCitiesRainChart"
+import AtlantiqueCitiesRainChart from "../components/blog/meteo-article/AtlantiqueCitiesRainChart"
+import SudCitiesRainChart from "../components/blog/meteo-article/SudCitiesRainChart"
+import ParisLyonCitiesRainChart from "../components/blog/meteo-article/ParisLyonCitiesRainChart"
+import Divider from "../components/blog/meteo-article/Divider"
 import meteoStyles from "./meteo.module.css"
 import { PostNode } from "../types/blog"
 import loadable from "@loadable/component"
@@ -15,6 +20,11 @@ const shortcodes = {
   FranceMapRR,
   FranceMapNBJJRR,
   FranceMapRRJOUR,
+  BretagneNormandieCitiesRainChart,
+  AtlantiqueCitiesRainChart,
+  SudCitiesRainChart,
+  ParisLyonCitiesRainChart,
+  Divider,
 }
 interface MeteoTemplateProps {
   posts: PostNode[]

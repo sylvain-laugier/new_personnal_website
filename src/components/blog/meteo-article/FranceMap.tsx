@@ -5,6 +5,7 @@ import * as am4maps from "@amcharts/amcharts4/maps"
 
 import franceMapStyles from "./franceMap.module.css"
 import { LabelTypes } from "./FranceMap-types"
+import { WeatherData } from "./types"
 
 interface FranceMapProps {
   label: LabelTypes
@@ -22,19 +23,6 @@ interface VoronoiData {
 
 interface VoronoiSeriesData extends VoronoiData {
   value?: string
-}
-
-interface WeatherData {
-  pluieSumByYear: {
-    data: {
-      NUM_POSTE: string
-      INST: number
-      RR: number
-      NBJRR1: number
-      NBRR: number
-      RRJOUR: number
-    }[]
-  }
 }
 
 interface franceMapData {
@@ -85,7 +73,8 @@ const FranceMap: FunctionComponent<FranceMapProps> = ({ label, mapTitle }) => {
         pageQuery.sourceMeteoData.data.weatherData.pluieSumByYear.data
       var chart = am4core.create(graphRef.current, am4maps.MapChart)
       chart.maxZoomLevel = 1
-      chart.chartContainer.wheelable = false;
+      chart.chartContainer.wheelable = false
+      chart.logo.visible = false
       // Set map definition
       // Set projection
       chart.projection = new am4maps.projections.Miller()
